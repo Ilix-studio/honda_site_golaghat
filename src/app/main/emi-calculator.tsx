@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -40,12 +40,8 @@ export function EmiCalculator({
   const [totalInterest, setTotalInterest] = useState<number>(0);
   const [totalAmount, setTotalAmount] = useState<number>(0);
 
-  // Calculate EMI when inputs change
-  useEffect(() => {
-    calculateEmi();
-  }, [bikePrice, downPayment, loanTerm, interestRate]);
-
-  const calculateEmi = (): void => {
+  // Memoize the calculateEmi function with useCallback
+  const calculateEmi = useCallback((): void => {
     const principal = bikePrice - downPayment;
     const ratePerMonth = interestRate / 100 / 12;
     const numPayments = loanTerm;
@@ -65,7 +61,12 @@ export function EmiCalculator({
     setEmi(emiValue);
     setTotalAmount(emiValue * numPayments);
     setTotalInterest(emiValue * numPayments - principal);
-  };
+  }, [bikePrice, downPayment, loanTerm, interestRate]); // Add all dependencies
+
+  // Calculate EMI when inputs change
+  useEffect(() => {
+    calculateEmi();
+  }, [calculateEmi]); // Now calculateEmi is the only dependency
 
   // Format currency in Indian Rupees
   const formatCurrency = (value: number): string => {

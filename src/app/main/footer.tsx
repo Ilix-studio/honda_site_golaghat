@@ -12,7 +12,9 @@ export function Footer() {
       <div className='container px-4 md:px-6 py-12 md:py-16'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           <div className='space-y-4'>
-            <h3 className='text-lg font-bold text-white'>Honda Motorcycles</h3>
+            <h3 className='text-lg font-bold text-white'>
+              Tsangpool Honda Motorcycles
+            </h3>
             <p className='text-sm'>
               Honda Motor Co., Ltd. is a Japanese public multinational
               conglomerate manufacturer of automobiles, motorcycles, and power
@@ -92,7 +94,7 @@ export function Footer() {
                   href='#'
                   className='text-sm hover:text-white transition-colors'
                 >
-                  Owner's Manual
+                  Owner&apos;s Manual
                 </Link>
               </li>
               <li>
@@ -108,7 +110,7 @@ export function Footer() {
                   href='#'
                   className='text-sm hover:text-white transition-colors'
                 >
-                  Service & Maintenance
+                  Service &amp; Maintenance
                 </Link>
               </li>
               <li>

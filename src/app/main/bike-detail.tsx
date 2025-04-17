@@ -241,7 +241,9 @@ const bikeData: BikeDetail = {
   ],
 };
 
-export function BikeDetail({ bikeId = "cbr1000rr" }) {
+// export function BikeDetail({ bikeId = "cbr1000rr" }) {
+export function BikeDetail() {
+  // In a real app, we would fetch the bike data based on the bikeId
   // In a real app, we would fetch the bike data based on the bikeId
   // For this example, we'll use the sample data
   const bike = bikeData;

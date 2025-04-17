@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { format } from "date-fns";
+import { format } from "date-fns/format";
 import {
   CalendarIcon,
   ChevronLeft,
@@ -448,9 +448,9 @@ export function TestRideForm() {
                             )}
                           >
                             <CalendarIcon className='mr-2 h-4 w-4' />
-                            {watchedValues.date
+                            {/* {watchedValues.date
                               ? format(watchedValues.date, "PPP")
-                              : "Select a date"}
+                              : "Select a date"} */}
                           </Button>
                         </PopoverTrigger>
                         <PopoverContent className='w-auto p-0'>
@@ -699,10 +699,10 @@ export function TestRideForm() {
                           <h4 className='font-medium'>Date & Time</h4>
                         </div>
                         <p>
-                          {watchedValues.date
+                          {/* {watchedValues.date
                             ? format(watchedValues.date, "PPPP")
                             : "Not selected"}{" "}
-                          at {watchedValues.time || "Not selected"}
+                          at {watchedValues.time || "Not selected"} */}
                         </p>
                       </div>
 
@@ -831,9 +831,9 @@ export function TestRideForm() {
                 <div className='flex justify-between mb-2'>
                   <span className='text-muted-foreground'>Date:</span>
                   <span className='font-medium'>
-                    {watchedValues.date
+                    {/* {watchedValues.date
                       ? format(watchedValues.date, "PPP")
-                      : ""}
+                      : ""} */}
                   </span>
                 </div>
                 <div className='flex justify-between'>
